@@ -16,6 +16,10 @@
 // TODO
 
 
+function extractNames(arr){
+    return arr.map(smth => smth.name)
+}
+
 
 
 

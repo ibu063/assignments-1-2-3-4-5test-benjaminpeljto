@@ -13,6 +13,40 @@
 // TODO
 
 
+function sayHi(name, language = "English") {
+    let greeting;
+    switch (language) {
+        case "French":
+            greeting = "Salut";
+            break;
+        case "Spanish":
+            greeting = "Hola";
+            break;
+        case "English":
+        default:
+            greeting = "Hi";
+    }
+    return `${greeting} ${name}!`;
+}
+
+function hiIn(lang) {
+    let greeting;
+    switch (lang) {
+        case "French":
+            greeting = "Salut";
+            break;
+        case "Spanish":
+            greeting = "Hola";
+            break;
+        case "English":
+        default:
+            greeting = "Hi";
+    }
+    return function(name) {
+        return `${greeting} ${name}!`;
+    };
+}
+
 
 
 

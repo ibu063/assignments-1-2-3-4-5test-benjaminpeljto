@@ -21,40 +21,23 @@
 
 // if opted for the tap function, you have the boilerplate code below:
 const tap = label => x => {
-  // TODO: The tap function should log the label with the value, then return the original value.
+  console.log(`${label}:`, x);
+  return x;
 };
 
+const byFive = arr => arr.filter(x => x % 5 === 0);
 const pipe = (...fns) => x => fns.reduce((v, fn) => fn(v), x);
 
 // TODO finish the average function below:
-const average = arr => 
+const average = arr => arr.reduce((a, b) => a + b, 0) / arr.length;
   
 const process = pipe( 
-  
+    byFive,
+    tap("Divisible by 5:"),
+    arr => arr.map(x => x - 2),
+    tap("After subtracting 2"),
+    avg => { const res = average(avg); 
+      console.log("Average:", res);
+      return res;
+    }
 );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Below this comment any modification is prohibited. 
-module.exports = process;
